@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <title>Peta OPLAH</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 🖼️ Intro Screen dengan Logo, Sambutan, dan Tombol -->
+  <div id="intro-screen">
+    <div class="intro-content">
+      <img src="assets/logo landak.png" alt="Logo Dinas Landak" class="intro-logo" />
+      <h1 class="intro-title">Selamat Datang di Layanan OPLAH Kabupaten Landak</h1>
+      <button id="enterMapBtn">Masuk ke Peta</button>
+    </div>
+  </div>
+
+  <!-- 🎛️ Filter Tahun Program -->
+  <div id="filter-container">
+    <label for="yearFilter">Filter Tahun:</label>
+    <select id="yearFilter">
+      <option value="all">Semua Tahun</option>
+      <option value="2023">2023</option>
+      <option value="2024">2024</option>
+      <option value="2025">2025</option>
+    </select>
+  </div>
+
+  <!-- 🔍 Pencarian Poktan/Ketua/Desa -->
+  <div id="search-container">
+    <input type="text" id="searchInput" placeholder="Cari Poktan, Ketua, Desa..." />
+    <button id="searchBtn">Cari</button>
+  </div>
+
+  <!-- 🗺️ Peta dan Sidebar -->
+  <div id="map"></div>
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-overlay"></div>
+    <button id="closeSidebar" class="close-btn">×</button>
+    <div class="sidebar-content">
+      <!-- Konten sidebar akan diisi lewat JavaScript -->
+    </div>
+  </div>
+
+  <!-- ⚙️ Script Leaflet dan Custom -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+
+  <!-- 🚀 Script untuk Intro Screen -->
+  <script>
+    document.getElementById('enterMapBtn').addEventListener('click', () => {
+      const intro = document.getElementById('intro-screen');
+      intro.style.opacity = '0';
+      setTimeout(() => {
+        intro.style.display = 'none';
+      }, 1000);
+    });
+  </script>
+
+</body>
+</html>
